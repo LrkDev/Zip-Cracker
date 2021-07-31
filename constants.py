@@ -10,10 +10,10 @@ DICTIONARY_SEP = "\n"
 DICTIONARY_ATTACK = "-dict"
 
 FILE_OPTIONS = {
-    "-l" : list(string.lowercase),
-    "-u" : list(string.uppercase),
-    "-d" : list(string.digits),
-    "-s" : list(string.punctuation),
+    "-l": list(string.ascii_lowercase),
+    "-u": list(string.ascii_uppercase),
+    "-d": list(string.digits),
+    "-s": list(string.punctuation),
 }
 
 FOUND_MSG = "Found the password! %s\n"
