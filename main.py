@@ -22,22 +22,23 @@ ATTACK_TYPES = {
 def main():
     if len(sys.argv) < 3:
         print(
-            "Usage: <zipped file>  <max_length>\n"
+            "Usage: <zipped file> <min_length> <max_length>\n"
             + "OPTIONAL : [<-u UPPERCASE> <-l LOWERCASE> <-d digits> <-s symbols>]\n"
             + "OPTIONAL : [<-d DICTIONARY> <dict_file>]\n"
         )
         return
 
     zipfilename = sys.argv[1]
-    max_length = int(sys.argv[2])
+    min_length = int(sys.argv[2])
+    max_length = int(sys.argv[3])
 
     # decide attack type
-    if constants.DICTIONARY_ATTACK in ''.join(sys.argv[3:]):
+    if constants.DICTIONARY_ATTACK in ''.join(sys.argv[4:]):
         print("Chosen attack type: DICTIONARY\n")
         attack_type = "dictionary"
         # unique arg is the dictionary file
         unique_arg = (
-            ''.join(sys.argv[3:]).split(constants.DICTIONARY_ATTACK)[1].strip()
+            ''.join(sys.argv[4:]).split(constants.DICTIONARY_ATTACK)[1].strip()
         )
     else:
         print("Chosen attack type: BRUTE FORCE\n")
@@ -45,14 +46,14 @@ def main():
         # unique arg is the chars
         unique_arg = []
         for key, val in constants.FILE_OPTIONS.items():
-            if key in ''.join(sys.argv[3:]):
+            if key in ''.join(sys.argv[4:]):
                 unique_arg += val
 
     # create zip file and cracker
     cracker = ATTACK_TYPES[attack_type](
         zipfile.ZipFile(zipfilename),
         max_length,
-        constants.DEFAULT_MIN_LENGTH,
+        min_length,  # constants.DEFAULT_MIN_LENGTH,
         unique_arg,
     )
 
