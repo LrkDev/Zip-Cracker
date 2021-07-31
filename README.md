@@ -1,4 +1,6 @@
-# Zip Crack (Forked from https://github.com/Royz2123/Zip-Cracker)
+# Zip Crack
+
+(Forked from https://github.com/Royz2123/Zip-Cracker)
 
 A brute force approach for unlocking a password protected zip file
 Created for educational purposes only, as part of IBM's Capture the flag
