@@ -9,10 +9,10 @@ Simply run the following line in your command line. Notice required and optional
 
 ```bash
 For brute force:
-python main.py <zip file> <max_length> [<-u UPPERCASE> <-l LOWERCASE> <-d digits> <-s symbols>]
+python main.py <zip file> <min_length> <max_length> [<-u UPPERCASE> <-l LOWERCASE> <-d digits> <-s symbols>]
 
 For Dictionary:
-python main.py <zip file> <max_length> [<-d DICTIONARRY ATTACK> <dict file>]
+python main.py <zip file> <min_length> <max_length> [<-d DICTIONARRY ATTACK> <dict file>]
 ```
 
 ## Algorithms
@@ -23,4 +23,7 @@ python main.py <zip file> <max_length> [<-d DICTIONARRY ATTACK> <dict file>]
 ## Credits
 
 All credits go to https://github.com/Royz2123
-I just forked it for my personal use correcting some minors problems due to language evolution and adding min_length in CLI options
+I just forked it for my personal use :
+- correcting some minor problems due to language evolution
+- adding min_length in CLI options
+- (and potentially custom characters list)
