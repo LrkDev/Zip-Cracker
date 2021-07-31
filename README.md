@@ -26,6 +26,6 @@ python main.py <zip file> <min_length> <max_length> [<-d DICTIONARRY ATTACK> <di
 
 All credits go to https://github.com/Royz2123
 I just forked it for my personal use :
-- correcting some minor problems due to language evolution
+- correcting some minor problems due to language evolution bewteen pyton 2 and 3
 - adding min_length in CLI options
 - (and potentially custom characters list)
